@@ -12,7 +12,11 @@ The original sources are written in CoffeeScript (`coffee/` directory), but this
 coffee --bare --output js/ coffee/
 ```
 
-This repository also contains a copy of the Chaplin library in `js/vendor/chaplin.js`.
+An alternative version of the source, written in plain javascript, can be found
+in the `plainjs/` directory.  This may serve as a reference for developers who wish
+to use Chaplin without adding CoffeeScript to thier build-chain.
+
+This repository also contains a copy of the Chaplin library in `vendor/chaplin.js`.
 
 ## Architectural Documentation
 
@@ -25,7 +29,7 @@ This example has a standard Chaplin MVC directory structure:
 - `coffee/controllers`
 - `coffee/libs`
 
-All vendor libraries like jQuery and Backbone are located `js/vendor/`.
+All vendor libraries like jQuery and Backbone are located `vendor/`.
 
 ### Application Startup
 
