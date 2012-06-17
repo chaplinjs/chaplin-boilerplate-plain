@@ -1,22 +1,25 @@
 ![Chaplin](http://s3.amazonaws.com/imgly_production/3401027/original.png)
 
-# Boilerplate Application for Chaplin.js
+# Plain JS Boilerplate Application for Chaplin.js
 
 This is a boilerplate applicatoin built with [Chaplin.js](https://github.com/chaplinjs/chaplin), an application structure on top of Backbone.js.
 
+While Chaplin itself is coded in CoffeeScript, any front-end developer can put the
+framework to use in their web applications.  This boilerplate serves as an example
+for how to build a Chaplin-powered application using plain javascript.  Chaplin
+(with the help of require.js) provides all the neccesary functionality and helpers
+to code a clean, modular, easy to read application without the syntactic sugar that
+CoffeeScript enables.
+
+If you prefer coding in CoffeeScript, you should head over to the
+[CoffeeScript Chaplin Boilterplate](https://github.com/chaplinjs/chaplin-boilerplate).
+
 ## Running the Example
 
-The original sources are written in CoffeeScript (`coffee/` directory), but this repository already comes with the compiled JavaScripts (`js/` directory). To recompile the CoffeeScripts, you might run the command line [CoffeeScript compiler](http://coffeescript.org/) in the repository’s root directory:
+Copy the contents of this folder to the document root of your favorite webserver.
 
-```
-coffee --bare --output js/ coffee/
-```
-
-An alternative version of the source, written in plain javascript, can be found
-in the `plainjs/` directory.  This may serve as a reference for developers who wish
-to use Chaplin without adding CoffeeScript to thier build-chain.
-
-This repository also contains a copy of the Chaplin library in `vendor/chaplin.js`.
+Visit `index.html` in your browser.  If everything is running correctly you will
+see a 'Hello World!' message render.
 
 ## Architectural Documentation
 
@@ -24,23 +27,25 @@ This repository also contains a copy of the Chaplin library in `vendor/chaplin.j
 
 This example has a standard Chaplin MVC directory structure:
 
-- `coffee/models`
-- `coffee/views`
-- `coffee/controllers`
-- `coffee/libs`
+- `js/models`
+- `js/views`
+- `js/controllers`
+- `js/libs`
 
-All vendor libraries like jQuery and Backbone are located `vendor/`.
+All vendor libraries like jQuery and Backbone are located at `vendor/`.
+
+A recently built copy of the base chaplin framework is located at `vendor/chaplin-amd-min.js`.
 
 ### Application Startup
 
 There are two special files which are responsible for the application bootstrap:
 
-- `coffee/hello_world_application.coffee`
-- `coffee/routes.coffee`
+- `js/hello_world_application.js`
+- `js/routes.js`
 
-`hello_world_application.coffee` is the application root class which inherits from `Chaplin.Application`. It starts up all Chaplin core modules and starts the routing. It is loaded and instantiated in `index.html`.
+`hello_world_application.js` is the application root class which inherits from `Chaplin.Application`. It starts up all Chaplin core modules and starts the routing. It is loaded and instantiated in `index.html`.
 
-`routes.coffee` contains all application routes which map URLs to controller actions.
+`routes.js` contains all application routes which map URLs to controller actions.
 
 ### Templating
 
@@ -48,8 +53,8 @@ Since Chaplin is template-engine agnostic, you have to decide which templating s
 
 Chaplin expects that views implement the `getTemplateFunction` method which needs to return the actual templating function. Since all views in this example use the same templating solution, `getTemplateFunction` is provided once by two base classes all other views inherit from:
 
-- `coffee/views/base/view.coffee`
-- `coffee/views/base/collection_view.coffee`
+- `js/views/base/view.js`
+- `js/views/base/collection_view.js`
 
 The actual `.hbs` template files are located in the `js/templates` directory.
 
@@ -57,13 +62,13 @@ The actual `.hbs` template files are located in the `js/templates` directory.
 
 To ease the development, this repository also provides application-specific base classes for models, collections and controllers. They inherit from the Chaplin base classes:
 
-- `coffee/models/base/model.coffee`
-- `coffee/models/base/collection.coffee`
-- `coffee/controllers/base/controller.coffee`
+- `js/models/base/model.js`
+- `js/models/base/collection.js`
+- `js/controllers/base/controller.js`
 
-Furthermore, `coffee/lib/support.coffee` and `coffee/lib/utils.coffee` demonstrate how to extend the feature testing and utility files of Chaplin.
+Furthermore, `js/lib/support.js` and `js/lib/utils.js` demonstrate how to extend the feature testing and utility files of Chaplin.
 
-Last but not least, this example uses a specific `Layout` class which can be found in `coffee/views/utils.coffee`.
+Last but not least, this example uses a specific `Layout` class which can be found in `js/views/utils.js`.
 
 ## [The Cast](https://github.com/chaplinjs/chaplin/blob/master/AUTHORS.md#the-cast)
 
