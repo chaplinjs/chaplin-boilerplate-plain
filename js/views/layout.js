@@ -1,10 +1,9 @@
 define([
-  'chaplin',
-  'lib/inherits'
-], function(Chaplin, inherits) {
+  'chaplin'
+], function(Chaplin) {
   'use strict';
 
-  var Layout = inherits(Chaplin.Layout, {
+  var Layout = Chaplin.Layout.extend({
 
     initialize: function(){
       Chaplin.Layout.prototype.initialize.apply(this, arguments);

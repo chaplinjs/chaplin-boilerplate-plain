@@ -1,12 +1,11 @@
 define([
   'controllers/base/controller',
   'models/hello_world',
-  'views/hello_world_view',
-  'lib/inherits'
-], function(Controller, HelloWorld, HelloWorldView, inherits) {
+  'views/hello_world_view'
+], function(Controller, HelloWorld, HelloWorldView) {
   'use strict';
 
-  var HelloWorldController = inherits(Controller, {
+  var HelloWorldController = Controller.extend({
 
     title: 'Hello World',
 

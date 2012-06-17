@@ -1,7 +1,7 @@
-define(['chaplin', 'lib/inherits'], function(Chaplin, inherits) {
+define(['chaplin'], function(Chaplin) {
   'use strict';
 
-  var Controller = inherits(Chaplin.Controller, {});
+  var Controller = Chaplin.Controller.extend({});
 
   return Controller;
 });
