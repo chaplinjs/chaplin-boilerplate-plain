@@ -17,9 +17,7 @@
 // Configure the AMD module loader
 requirejs.config({
   // The path where your JavaScripts are located.
-  // Change this to '/plainjs/' to load the plain javascript instead of the
-  // compiled CoffeeScript.
-  baseUrl: '/plainjs/',
+  baseUrl: '/js/',
   // Specify the paths of vendor libraries
   paths: {
     jquery: '../vendor/jquery-1.7.2',
@@ -27,7 +25,7 @@ requirejs.config({
     backbone: '../vendor/backbone-0.9.2',
     handlebars: '../vendor/handlebars-1.0.0.beta.6',
     text: '../vendor/require-text-2.0.0',
-    chaplin: '../vendor/chaplin'
+    chaplin: '../vendor/chaplin-amd-min'
   },
   // Underscore and Backbone are not AMD-capable per default,
   // so we need to use the AMD wrapping of RequireJS
