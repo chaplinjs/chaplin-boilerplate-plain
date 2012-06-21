@@ -1,5 +1,5 @@
 define([
-  'views/base/view',
+  'base/view',
   'text!templates/hello_world.hbs'
 ], function(View, template) {
   'use strict';

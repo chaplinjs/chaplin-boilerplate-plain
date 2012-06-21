@@ -1,5 +1,5 @@
 define([
-  'models/base/model'
+  'base/model'
 ], function(Model) {
   'use strict';
 

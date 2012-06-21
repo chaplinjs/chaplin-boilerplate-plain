@@ -1,5 +1,5 @@
 define([
-  'controllers/base/controller',
+  'base/controller',
   'models/hello_world',
   'views/hello_world_view'
 ], function(Controller, HelloWorld, HelloWorldView) {
