@@ -65,7 +65,7 @@ define([
       // Add additional application-specific properties and methods
       // Seal the mediator
       Chaplin.mediator.seal();
-    },
+    }
   });
 
   return HelloWorldApplication;
