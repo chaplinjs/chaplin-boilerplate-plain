@@ -12,7 +12,7 @@ to code a clean, modular, easy to read application without the syntactic sugar t
 CoffeeScript enables.
 
 If you prefer coding in CoffeeScript, you should head over to the
-[CoffeeScript Chaplin Boilterplate](https://github.com/chaplinjs/chaplin-boilerplate).
+[CoffeeScript Chaplin Boilerplate](https://github.com/chaplinjs/chaplin-boilerplate).
 
 ## Running the Example
 
