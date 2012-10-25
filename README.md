@@ -32,9 +32,10 @@ This example has a standard Chaplin MVC directory structure:
 - `js/controllers`
 - `js/libs`
 
-All vendor libraries like jQuery and Backbone are located at `vendor/`.
+All vendor libraries like jQuery and Backbone are located `js/vendor/`.
 
-A recently built copy of the base chaplin framework is located at `vendor/chaplin-amd-min.js`.
+This repository also contains a recent built of the Chaplin library in `js/vendor/chaplin-*.js`.
+
 
 ### Application Startup
 
@@ -68,7 +69,7 @@ To ease the development, this repository also provides application-specific base
 
 Furthermore, `js/lib/support.js` and `js/lib/utils.js` demonstrate how to extend the feature testing and utility files of Chaplin.
 
-Last but not least, this example uses a specific `Layout` class which can be found in `js/views/utils.js`.
+Last but not least, this example uses a specific `Layout` class which can be found in `js/views/layout.js`.
 
 ## [The Cast](https://github.com/chaplinjs/chaplin/blob/master/AUTHORS.md#the-cast)
 
