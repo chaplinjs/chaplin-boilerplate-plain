@@ -5,14 +5,8 @@ define([
 
   var Layout = Chaplin.Layout.extend({
 
-    initialize: function(){
-      Chaplin.Layout.prototype.initialize.apply(this, arguments);
-      //this.subscribeEvent('startupController', this.doSomething);
-    }
+    // Place your application-specific Layout features here
 
-    //, doSomething: function() {
-      // So something cool here.
-    //}
   });
 
   return Layout;

@@ -32,7 +32,7 @@ define([
       // Chaplin enables pushState per default and Backbone uses / as
       // the root per default. You might change that in the options
       // if necessary:
-      // this.initRouter routes, pushState: false, root: '/subdir/'
+      // this.initRouter(routes, { pushState: false , root: '/subdir/' });
 
       // Freeze the application instance to prevent further changes
       if (Object.freeze) Object.freeze(this);

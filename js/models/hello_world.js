@@ -1,6 +1,6 @@
 define([
   'chaplin',
-  'base/model'
+  'models/base/model'
 ], function(Chaplin, Model) {
   'use strict';
 
@@ -14,6 +14,7 @@ define([
       //Model.apply(this, arguments);
       //console.debug('HelloWorld#initialize');
     //}
+
   });
 
   return HelloWorld;

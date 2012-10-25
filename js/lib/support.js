@@ -3,6 +3,7 @@ define([
   'lib/utils',
   'chaplin'
 ], function(_, utils, Chaplin) {
+  'use strict';
 
   // Application-specific feature detection
   // --------------------------------------

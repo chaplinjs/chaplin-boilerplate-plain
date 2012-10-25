@@ -1,17 +1,14 @@
 define([
   'underscore',
-  'jquery',
   'chaplin'
-], function(_, jquery, Chaplin) {
+], function(_, Chaplin) {
+  'use strict'
 
   // Application-specific utilities
   // ------------------------------
 
-  // Shortcut to the mediator
-  mediator = Chaplin.mediator;
-
   // Delegate to Chaplin’s utils module
-  utils = Chaplin.utils.beget(Chaplin.utils);
+  var utils = Chaplin.utils.beget(Chaplin.utils);
 
   // Add additional application-specific properties and methods
 
