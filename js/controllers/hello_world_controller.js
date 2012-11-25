@@ -14,8 +14,8 @@ define([
     },
 
     show: function(params) {
-      //console.debug 'HelloWorldController#show'
-      this.model = new HelloWorld()
+      //console.debug('HelloWorldController#show');
+      this.model = new HelloWorld();
       this.view = new HelloWorldView({ model: this.model });
     }
   });
