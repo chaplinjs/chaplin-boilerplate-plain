@@ -8,9 +8,14 @@ define([
   // Application-specific Handlebars helpers
   // -------------------------------------------
 
-  // Handlebars.registerHelper('helper_name', function(options) {
-  //   return 'foo';
-  // });
+  Handlebars.registerHelper('url', function(routeName) {
+    var params = [].slice.call(arguments, 1);
+    var url;
+    Chaplin.mediator.publish('!router:reverse', routeName, params, function(result) {
+      url = result;
+    });
+    "/" + url;
+  });
 
   return null;
 });

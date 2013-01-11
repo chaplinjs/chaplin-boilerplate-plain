@@ -6,13 +6,6 @@ define([
   'use strict';
 
   var HelloWorldController = Controller.extend({
-
-    title: 'Hello World',
-
-    historyURL: function(params) {
-      return '';
-    },
-
     show: function(params) {
       //console.debug('HelloWorldController#show');
       this.model = new HelloWorld();
