@@ -11,8 +11,8 @@ define([
     }
 
     //,initialize: function(attributes, options) {
-      //Model.apply(this, arguments);
-      //console.debug('HelloWorld#initialize');
+    //  Model.prototype.initialize.apply(this, arguments);
+    //  console.debug('HelloWorld#initialize');
     //}
 
   });
