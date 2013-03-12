@@ -23,12 +23,12 @@ requirejs.config({
   baseUrl: './js/',
   // Specify the paths of vendor libraries
   paths: {
-    jquery: 'vendor/jquery-1.8.3',
+    jquery: 'vendor/jquery-1.9.1',
     underscore: 'vendor/underscore-1.4.3',
-    backbone: 'vendor/backbone-0.9.9',
+    backbone: 'vendor/backbone-0.9.10',
     handlebars: 'vendor/handlebars-1.0.rc.1',
     text: 'vendor/require-text-2.0.3',
-    chaplin: 'vendor/chaplin-0.6.0'
+    chaplin: 'vendor/chaplin-0.7.0'
   },
   // Underscore and Backbone are not AMD-capable per default,
   // so we need to use the AMD wrapping of RequireJS
@@ -50,8 +50,8 @@ requirejs.config({
 });
 
 // Bootstrap the application
-require(['hello_world_application'], function (HelloWorldApplication) {
-  var app = new HelloWorldApplication();
+require(['application'], function(Application) {
+  var app = new Application();
   app.initialize();
 });
 </script>
