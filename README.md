@@ -41,10 +41,10 @@ This repository also contains a recent built of the Chaplin library in `js/vendo
 
 There are two special files which are responsible for the application bootstrap:
 
-- `js/hello_world_application.js`
+- `js/application.js`
 - `js/routes.js`
 
-`hello_world_application.js` is the application root class which inherits from `Chaplin.Application`. It starts up all Chaplin core modules and starts the routing. It is loaded and instantiated in `index.html`.
+`application.js` is the application root class which inherits from `Chaplin.Application`. It starts up all Chaplin core modules and starts the routing. It is loaded and instantiated in `index.html`.
 
 `routes.js` contains all application routes which map URLs to controller actions.
 

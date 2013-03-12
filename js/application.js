@@ -19,8 +19,8 @@ define([
       // Initialize core components.
       // ---------------------------
 
-      // Dispatcher listens for routing events and
-      this.initDispatcher({controllerSuffix: '-controller'});
+      // Dispatcher listens for routing events and initialises controllers.
+      this.initDispatcher();
 
       // Layout listens for click events & delegates internal links to router.
       this.initLayout();
