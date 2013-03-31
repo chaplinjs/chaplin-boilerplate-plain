@@ -12,11 +12,6 @@ define([
   Handlebars.registerHelper('url', function(routeName) {
     var params = [].slice.call(arguments, 1);
     var options = params.pop();
-    var url;
-    // Backbone events are synchronous, so this is possible.
-    Chaplin.mediator.publish('!router:reverse', routeName, params, function(result) {
-      url = result ? '/' + result : routeName;
-    });
-    return url;
+    return Chaplin.helpers.reverse(routeName, params);
   });
 });

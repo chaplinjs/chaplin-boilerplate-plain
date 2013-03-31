@@ -20,7 +20,7 @@ define([
       // ---------------------------
 
       // Dispatcher listens for routing events and initialises controllers.
-      this.initDispatcher();
+      this.initDispatcher({controllerSuffix: '-controller'});
 
       // Layout listens for click events & delegates internal links to router.
       this.initLayout();
@@ -38,6 +38,9 @@ define([
       // if necessary:
       // this.initRouter(routes, {pushState: false, root: '/subdir/'});
       this.initRouter(routes);
+
+      // Actually start routing.
+      this.startRouting();
 
       // Freeze the application instance to prevent further changes.
       if (Object.freeze) Object.freeze(this);

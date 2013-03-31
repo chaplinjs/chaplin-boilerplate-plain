@@ -1,6 +1,6 @@
 define([
   'views/base/view',
-  'text!templates/hello_world.hbs'
+  'text!templates/hello-world.hbs'
 ], function(View, template) {
   'use strict';
 
@@ -11,7 +11,7 @@ define([
     className: 'hello-world',
 
     // Automatically append to the DOM on render
-    container: '#page-container',
+    region: 'main',
 
     // Save the template string in a prototype property.
     // This is overwritten with the compiled template function.
