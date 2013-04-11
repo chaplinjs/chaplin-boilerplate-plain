@@ -18,7 +18,11 @@ If you prefer coding in CoffeeScript, you should head over to the
 
 Copy the contents of this folder to the document root of your favorite webserver.
 
-Visit `index.html` in your browser.  If everything is running correctly you will
+If you don’t have any, [pushserve](https://github.com/paulmillr/pushserve)
+is a suggested http server with simple syntax and HTML5 pushState support.
+Install it with nodejs package manager: `npm install -g pushserve` and then launch `pushserve`.
+
+Visit `index.html` in your browser. If everything is running correctly you will
 see a 'Hello World!' message render.
 
 ## Architectural Documentation

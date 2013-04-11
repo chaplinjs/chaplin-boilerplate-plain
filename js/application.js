@@ -19,6 +19,14 @@ define([
       // Initialize core components.
       // ---------------------------
 
+      // Register all routes and start routing.
+      // You might pass Router/History options as the second parameter.
+      // Chaplin enables pushState per default and Backbone uses / as
+      // the root per default. You might change that in the options
+      // if necessary:
+      // this.initRouter(routes, {pushState: false, root: '/subdir/'});
+      this.initRouter(routes);
+
       // Dispatcher listens for routing events and initialises controllers.
       this.initDispatcher({controllerSuffix: '-controller'});
 
@@ -30,14 +38,6 @@ define([
 
       // Mediator is a global message broker which implements pub-sub pattern.
       this.initMediator();
-
-      // Register all routes and start routing.
-      // You might pass Router/History options as the second parameter.
-      // Chaplin enables pushState per default and Backbone uses / as
-      // the root per default. You might change that in the options
-      // if necessary:
-      // this.initRouter(routes, {pushState: false, root: '/subdir/'});
-      this.initRouter(routes);
 
       // Actually start routing.
       this.startRouting();
