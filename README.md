@@ -17,13 +17,27 @@ If you prefer coding in CoffeeScript, you should head over to the
 ## Running the Example
 
 Copy the contents of this folder to the document root of your favorite webserver.
+If you’re running a local webserver like Apache or Nginx, the URL is
+`http://localhost/` or similar.
 
-If you don’t have any, [pushserve](https://github.com/paulmillr/pushserve)
-is a suggested http server with simple syntax and HTML5 pushState support.
+It is necessary that you run the example in a `http://` context. Just opening the
+`index.html` via `file://` won’t work.
+
+If you don’t have a webserver installed, [pushserve](https://github.com/paulmillr/pushserve)
+is a suggested HTTP server with simple syntax and HTML5 pushState support.
 Install it with nodejs package manager: `npm install -g pushserve` and then launch `pushserve`.
 
-Visit `index.html` in your browser. If everything is running correctly you will
-see a 'Hello World!' message render.
+If the boilerplate is running correctly, you will see a “Hello World!” message.
+
+If your JavaScript app is located in a subfolder on your domain, for example at
+`http://localhost/my-chaplin-app/`, you need to configure the Chaplin.Router
+accordingly. Please open the `application.js` file and edit
+[the `initRouter` call](https://github.com/chaplinjs/chaplin-boilerplate-plain/blob/master/js/application.js#L22-L28).
+Change the `root` option accordingly, for example:
+
+```
+this.initRouter(routes, { root: '/my-chaplin-app/' });
+```
 
 ## Architectural Documentation
 
