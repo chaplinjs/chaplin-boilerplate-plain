@@ -9,7 +9,7 @@ define([
   // --------------------------------------
 
   // Delegate to Chaplin’s support module
-  support = utils.beget(Chaplin.support);
+  var support = utils.beget(Chaplin.support);
 
   // Add additional application-specific properties and methods
 
