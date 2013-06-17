@@ -2,7 +2,7 @@
 
 # Plain JS Boilerplate Application for Chaplin.js
 
-This is a boilerplate applicatoin built with [Chaplin.js](http://chaplinjs.org), an application structure on top of Backbone.js.
+This is a boilerplate application built with [Chaplin.js](http://chaplinjs.org), an application structure on top of Backbone.js.
 
 While Chaplin itself is coded in CoffeeScript, any front-end developer can put the
 framework to use in their web applications.  This boilerplate serves as an example
@@ -52,7 +52,7 @@ This example has a standard Chaplin MVC directory structure:
 
 All vendor libraries like jQuery and Backbone are located `js/vendor/`.
 
-This repository also contains a recent built of the Chaplin library in `js/vendor/chaplin-*.js`.
+This repository also contains a recent build of the Chaplin library in `js/vendor/chaplin-*.js`.
 
 
 ### Application Startup
