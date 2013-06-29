@@ -8,7 +8,10 @@ define([
   var HelloWorldController = Controller.extend({
     show: function(params) {
       this.model = new HelloWorld();
-      this.view = new HelloWorldView({model: this.model});
+      this.view = new HelloWorldView({
+        model: this.model,
+        region: 'main'
+      });
     }
   });
 
