@@ -10,9 +10,6 @@ define([
 
     className: 'hello-world',
 
-    // Automatically append to the DOM on render
-    region: 'main',
-
     // Save the template string in a prototype property.
     // This is overwritten with the compiled template function.
     // In the end you might want to used precompiled templates.
