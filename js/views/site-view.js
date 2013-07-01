@@ -5,7 +5,7 @@ define(['views/base/view', 'text!templates/site.hbs'], function(View, template) 
     container: 'body',
     id: 'site-container',
     regions: {
-      '#main-container': 'main'
+      main: '#main-container'
     },
     template: template
   });
