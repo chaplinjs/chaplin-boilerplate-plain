@@ -31,12 +31,17 @@ If the boilerplate is running correctly, you will see a “Hello World!” messa
 
 If your JavaScript app is located in a subfolder on your domain, for example at
 `http://localhost/my-chaplin-app/`, you need to configure the Chaplin.Router
-accordingly. Please open the `application.js` file and edit
-[the `initRouter` call](https://github.com/chaplinjs/chaplin-boilerplate-plain/blob/master/js/application.js#L22-L28).
-Change the `root` option accordingly, for example:
+accordingly. Please open the `index.html` file and edit
+[application
+initialization](https://github.com/chaplinjs/chaplin-boilerplate-plain/blob/master/index.html#L42).
+Pass an appropriate `root` option, for example:
 
-```
-this.initRouter(routes, { root: '/my-chaplin-app/' });
+```html
+require(['application', 'routes'], function(Application, routes) {
+  new Application(
+    {routes: routes, controllerSuffix: '-controller', root: '/my-chaplin-app/'}
+  );
+});
 ```
 
 ## Architectural Documentation
