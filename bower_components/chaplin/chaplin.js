@@ -1,5 +1,5 @@
 /*!
- * Chaplin 0.11.0
+ * Chaplin 0.11.1
  *
  * Chaplin may be freely distributed under the MIT license.
  * For all details and documentation:
@@ -269,6 +269,8 @@ module.exports = Dispatcher = (function() {
 
   Dispatcher.prototype.currentParams = null;
 
+  Dispatcher.prototype.currentQuery = null;
+
   function Dispatcher() {
     this.initialize.apply(this, arguments);
   }
@@ -289,13 +291,16 @@ module.exports = Dispatcher = (function() {
       _this = this;
     params = params ? _.clone(params) : {};
     options = options ? _.clone(options) : {};
+    if (!(options.query != null)) {
+      options.query = {};
+    }
     if (options.changeURL !== false) {
       options.changeURL = true;
     }
     if (options.forceStartup !== true) {
       options.forceStartup = false;
     }
-    if (!options.forceStartup && ((_ref = this.currentRoute) != null ? _ref.controller : void 0) === route.controller && ((_ref1 = this.currentRoute) != null ? _ref1.action : void 0) === route.action && _.isEqual(this.currentParams, params)) {
+    if (!options.forceStartup && ((_ref = this.currentRoute) != null ? _ref.controller : void 0) === route.controller && ((_ref1 = this.currentRoute) != null ? _ref1.action : void 0) === route.action && _.isEqual(this.currentParams, params) && _.isEqual(this.currentQuery, options.query)) {
       return;
     }
     return this.loadController(route.controller, function(Controller) {
@@ -331,6 +336,7 @@ module.exports = Dispatcher = (function() {
     }
     this.currentController = controller;
     this.currentParams = params;
+    this.currentQuery = options.query;
     controller[route.action](params, route, options);
     if (controller.redirected) {
       return;
@@ -1821,7 +1827,7 @@ module.exports = Route = (function() {
   };
 
   Route.prototype.reverse = function(params, query) {
-    var name, url, value, _i, _len, _ref;
+    var name, queryString, url, value, _i, _len, _ref;
     params = this.normalizeParams(params);
     if (params === false) {
       return false;
@@ -1837,7 +1843,8 @@ module.exports = Route = (function() {
       return url;
     }
     if (typeof query === 'object') {
-      return url += '?' + utils.queryParams.stringify(query);
+      queryString = utils.queryParams.stringify(query);
+      return url += queryString ? '?' + queryString : '';
     } else {
       return url += (query[0] === '?' ? '' : '?') + query;
     }
@@ -2660,8 +2667,15 @@ utils = {
   },
   queryParams: {
     stringify: function(queryParams) {
-      var arrParam, encodedKey, key, query, value, _i, _len;
+      var arrParam, encodedKey, key, query, stringifyKeyValuePair, value, _i, _len;
       query = '';
+      stringifyKeyValuePair = function(encodedKey, value) {
+        if (value != null) {
+          return '&' + encodedKey + '=' + encodeURIComponent(value);
+        } else {
+          return '';
+        }
+      };
       for (key in queryParams) {
         if (!__hasProp.call(queryParams, key)) continue;
         value = queryParams[key];
@@ -2669,10 +2683,10 @@ utils = {
         if (_.isArray(value)) {
           for (_i = 0, _len = value.length; _i < _len; _i++) {
             arrParam = value[_i];
-            query += '&' + encodedKey + '=' + encodeURIComponent(arrParam);
+            query += stringifyKeyValuePair(encodedKey, arrParam);
           }
         } else {
-          query += '&' + encodedKey + '=' + encodeURIComponent(value);
+          query += stringifyKeyValuePair(encodedKey, value);
         }
       }
       return query && query.substring(1);
