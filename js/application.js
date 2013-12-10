@@ -8,9 +8,10 @@ define(['chaplin'], function(Chaplin) {
     // “Controller title – Site title” (see Layout#adjustTitle)
     title: 'Chaplin Example Application',
     start: function() {
+      var args = [].slice.call(arguments);
       // You can fetch some data here and start app
       // (by calling supermethod) after that.
-      Chaplin.Application.prototype.start.apply(this, arguments);
+      Chaplin.Application.prototype.start.apply(this, args);
     }
   });
 

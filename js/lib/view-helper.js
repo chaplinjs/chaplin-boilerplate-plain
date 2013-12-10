@@ -12,6 +12,6 @@ define([
   Handlebars.registerHelper('url', function(routeName) {
     var params = [].slice.call(arguments, 1);
     var options = params.pop();
-    return Chaplin.helpers.reverse(routeName, params);
+    return utils.reverse(routeName, params);
   });
 });
